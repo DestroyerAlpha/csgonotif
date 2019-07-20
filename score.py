@@ -28,7 +28,8 @@ for team in ranking_container:
 def scoreRetreiver():
 	clear()
 	threading.Timer(115.0,scoreRetreiver).start()
-
+	url = 'http://esportlivescore.com/g_csgo.html'
+	source = requests.get(url, headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36'}).text
 	soup = BeautifulSoup(source, 'lxml')
 	filtered = soup.findAll("div",{"data-status":"Started"})
 
@@ -58,11 +59,6 @@ def scoreRetreiver():
 					message += notification + '\n'
 		if message != "":
 			sendmessage(message)
-
-
-
-url = 'http://esportlivescore.com/g_csgo.html'
-source = requests.get(url, headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36'}).text
 
 
 scoreRetreiver()
