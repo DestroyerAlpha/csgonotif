@@ -1,5 +1,5 @@
 # csgonotif
-A small python program which gives you live scores of the matches being played by Top 30 teams.
+A small python program which gives you live scores of the matches being played by Top 30 CSGO teams (Based on HLTV rankings).
 
 This program first retrieves the HLTV top 30 teams. Then it only gives you the notification about the live matches played by these teams.
 (Because honestly, no one gives a crap about other matches.)
